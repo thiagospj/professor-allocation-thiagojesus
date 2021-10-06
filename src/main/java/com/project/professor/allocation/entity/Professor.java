@@ -14,11 +14,15 @@ public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "name", nullable = false)
 	private String name;
+	
+	@Column(name = "cpf", unique = true, nullable = false, length = 14)
 	private String cpf;
 
 	@Column(name = "department_id", nullable = false)
-	private Long departmentid;
+	private Long departmentId;
 
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "department_id", insertable = false, updatable = false, nullable = false)
@@ -57,8 +61,8 @@ public class Professor {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "Professor [id=" + id + ", name=" + name + ", cpf=" + cpf + ", departmentId=" + departmentId
+				+ ", department=" + department + "]";
 	}
 
 }

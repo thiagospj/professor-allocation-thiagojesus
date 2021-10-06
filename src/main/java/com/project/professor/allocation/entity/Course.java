@@ -1,5 +1,6 @@
 package com.project.professor.allocation.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,8 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
+	
+	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 	
 	public Course(Long id, String name) {
@@ -36,8 +39,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "Course [id=" + id + ", name=" + name + "]";
 	}
 	
 	
