@@ -35,6 +35,10 @@ public class Professor {
 		this.cpf = cpf;
 	}
 
+	public Professor () {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}

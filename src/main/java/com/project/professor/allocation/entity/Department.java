@@ -22,6 +22,11 @@ public class Department {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public Department() {
+		
+	}
+		
 	public Long getId() {
 		return id;
 	}

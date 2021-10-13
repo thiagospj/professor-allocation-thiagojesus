@@ -38,6 +38,9 @@ public class Allocation {
 	@Column (name = "course_id", nullable = false)
 	private Long courseId;
 	
+	@Column (name = "professor_id", nullable = false)
+	private Long professorId;
+	
 	@ManyToOne (optional = false)
 	@JoinColumn (name = "course_id", nullable = false, insertable = false, updatable = false)
 	private Course course;	
@@ -53,11 +56,17 @@ public class Allocation {
 		this.day = day;
 		this.start = start;
 		this.end = end;
+		this.courseId = courseId;
+		this.professorId = professorId;
 		this.course = course;
 		this.professor = professor;
-
+		
 	}
 
+	public Allocation () {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -100,6 +109,15 @@ public class Allocation {
 		this.courseId = courseId;
 	}
 
+	
+	public Long getProfessorId() {
+		return professorId;
+	}
+
+	public void setProfessorId(Long professorId) {
+		this.professorId = professorId;
+	}
+
 	public Course getCourse() {
 		return course;
 	}
@@ -119,7 +137,8 @@ public class Allocation {
 	@Override
 	public String toString() {
 		
-		return super.toString();
+		return "Allocation [id=" + id + ", day=" + day + ", start=" + start + ", end=" + end + ", courseId=" + courseId
+				+ ", professorId=" + professorId + ", course=" + course + ", professor=" + professor + "]";
 	}
 	
 
